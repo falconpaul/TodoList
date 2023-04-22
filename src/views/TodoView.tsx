@@ -42,7 +42,7 @@ const TodoView: React.FC<Props> = ({
                 {actualItems.map((item) => (
                     <li key={item.id}>
                         <span className="deleteTodo" onClick={() => deleteTodo(item.id)}>×</span>
-                        <input type="checkbox" onChange={() => updateTodo({...item, done: 1})} />
+                        <input type="checkbox" onChange={() => updateTodo({ ...item, done: 1 })} />
                         <span>{item.text}</span>
                     </li>
                 ))}
@@ -51,9 +51,9 @@ const TodoView: React.FC<Props> = ({
         <div className="mt-10">
             <ul>
                 {doneItems.map((item) => (
-                    <li key={item.id}> 
+                    <li key={item.id}>
                         <span className="deleteTodo" onClick={() => deleteTodo(item.id)}>×</span>
-                        <input type="checkbox" onChange={() => updateTodo({...item, done: 0})} checked />
+                        <input type="checkbox" onChange={() => updateTodo({ ...item, done: 0 })} checked />
                         <span>{item.text}</span>
                     </li>
                 ))}

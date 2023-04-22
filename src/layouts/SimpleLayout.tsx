@@ -20,7 +20,7 @@ const SimpleLayout: React.FC<Props> = ({ tokenData, logout }) => {
                 {authorized && <div  className="header">
                     <Link to='/todo'>Todo</Link>
                     <div>{tokenData.login}</div>
-                    <div onClick={logout}>Выйти</div>
+                    <Link onClick={logout} to='/login'>Выйти</Link>
                 </div>}
                 {!authorized && <div  className="header">
                     <Link to='/login'>Войти</Link>
