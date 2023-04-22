@@ -1,0 +1,31 @@
+.popUpBg {
+    width: 100%;
+    height: 2000px;
+    background-color: rgba(0,0,0,0.5);
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    
+    .popUp {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:40px auto 0px auto;
+        width: 400px;
+        height: 150px;
+        padding: 15px;
+        background-color: #ffffff;
+        border-radius:5px;
+        box-shadow: 0px 0px 10px #000;
+
+        .popUpBt {
+            color: red;
+            position: absolute;
+            right: 3px;
+            top: -2px;
+            cursor: pointer;
+        }
+    }
+}
+

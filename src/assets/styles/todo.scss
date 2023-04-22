@@ -1,0 +1,31 @@
+.btn {
+    color: #c0c0c0;
+    display: inline-block;
+    cursor: pointer;
+}
+.btn:hover {
+    color: grey;
+}
+
+input[type="text"] {
+    font-family: inherit;
+    height: 32px;
+    width: 240px;
+}
+
+.level {
+    display: flex;
+    align-items: center;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+.deleteTodo {
+    cursor: pointer;
+}
