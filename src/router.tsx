@@ -4,7 +4,6 @@ import LoginView from "./views/LoginView"
 import RegView from "./views/RegView"
 import TodoView from "./views/TodoView"
 import SimpleLayout from "./layouts/SimpleLayout"
-import LogoutView from "./views/LogoutView"
 
 const router = createBrowserRouter([
   {
@@ -26,11 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/todo",
         element: <TodoView />,
-      },
-      {
-        path: "/logout",
-        element: <LogoutView />,
-      },
+      }
     ],
   },
 ])

@@ -22,45 +22,47 @@ const TodoView: React.FC<Props> = ({
     }, [])
 
     return <>
-        <div className="btn" onClick={deleteAllTodos}>Начать новый список</div>
-        <div className="level mt-10">
-            <input
-                type="text"
-                placeholder="Что хотите добавить?"
-                value={text}
-                onChange={(e) => setText(e.currentTarget.value)}
-            />
-            <div
-                className="btn ml-10"
-                onClick={createTodo}
-            >
-                Enter
+        <div className="todoWrapper">
+            <div className="btn" onClick={deleteAllTodos}>Начать новый список</div>
+            <div className="level mt-10">
+                <input
+                    type="text"
+                    placeholder="Что хотите добавить?"
+                    value={text}
+                    onChange={(e) => setText(e.currentTarget.value)}
+                />
+                <div
+                    className="btn ml-10"
+                    onClick={createTodo}
+                >
+                    Enter
+                </div>
             </div>
-        </div>
-        <div className="mt-10">
-            <ol>
-                {actualItems.map((item) => (
-                    <li key={item.id}>
-                        <span className="deleteTodo" onClick={() => deleteTodo(item.id)}>×</span>
-                        <input type="checkbox" onChange={() => updateTodo({ ...item, done: 1 })} />
-                        <span>{item.text}</span>
-                    </li>
-                ))}
-            </ol>
-        </div>
-        <div className="mt-10">
-            <ul>
-                {doneItems.map((item) => (
-                    <li key={item.id}>
-                        <span className="deleteTodo" onClick={() => deleteTodo(item.id)}>×</span>
-                        <input type="checkbox" onChange={() => updateTodo({ ...item, done: 0 })} checked />
-                        <span>{item.text}</span>
-                    </li>
-                ))}
-            </ul>
-        </div>
-        <div className="mt-10">
-            <div className="btn" onClick={deleteDoneTodos}>Удалить выполненные</div>
+            <div className="mt-10">
+                <ol>
+                    {actualItems.map((item) => (
+                        <li key={item.id}>
+                            <span className="deleteTodo" onClick={() => deleteTodo(item.id)}>×</span>
+                            <input type="checkbox" onChange={() => updateTodo({ ...item, done: 1 })} />
+                            <span>{item.text}</span>
+                        </li>
+                    ))}
+                </ol>
+            </div>
+            <div className="mt-10">
+                <ul>
+                    {doneItems.map((item) => (
+                        <li key={item.id}>
+                            <span className="deleteTodo" onClick={() => deleteTodo(item.id)}>×</span>
+                            <input type="checkbox" onChange={() => updateTodo({ ...item, done: 0 })} checked />
+                            <span>{item.text}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <div className="mt-10">
+                <div className="btn" onClick={deleteDoneTodos}>Удалить выполненные</div>
+            </div>
         </div>
     </>
 }

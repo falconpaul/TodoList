@@ -5,17 +5,12 @@ import '../assets/styles/general.scss'
 import { AppDispatch, RootState } from "../store"
 import { logout, selectTokenData } from "../store/user/user"
 import { connect, ConnectedProps } from "react-redux"
-import { useEffect } from "react"
 
 const SimpleLayout: React.FC<Props> = ({ tokenData, logout }) => {
     const authorized = !!tokenData
-    useEffect(() => {
-        if (tokenData) {
 
-        }
-    }, [tokenData])
     return (
-        <>
+        <div className="wrapper">
             <header>
                 {authorized && <div  className="header">
                     <Link to='/todo'>Todo</Link>
@@ -30,7 +25,7 @@ const SimpleLayout: React.FC<Props> = ({ tokenData, logout }) => {
             <main>
                 <Outlet />
             </main>
-        </>
+        </div>
     )
 }
 
